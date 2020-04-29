@@ -16,6 +16,7 @@ type
     eNAMA: TEdit;
     Label1: TLabel;
     procedure button(Sender: TObject);
+    procedure eNAMAChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
 
@@ -33,8 +34,38 @@ implementation
 { TForm1 }
 
 procedure TForm1.button(Sender: TObject);
+var
+  namadepan: String;
+  namatengah, namabelakang: String;
+  usia: Integer;
+  targetkuliah: Integer;
+  IPK: Double;
+  nilaiabjad: char;
+  tampan: Boolean;
 begin
-  showmessage('hello '+eNAMA.text);
+     namadepan:='Anggara';
+     namatengah:='Noor';
+     namabelakang:='Adi';
+     usia:=20;
+     IPK:= 3.896572431;
+     nilaiabjad:='A';
+     tampan:=false;
+
+     messageDlg('Judul Pesan',namadepan + ' ' +
+           namatengah + ' ' + namabelakang, mtInformation,[mbOK],0);
+
+     messageDlg('usia',inttostr(usia), mtInformation,[mbOK],0);
+
+     messageDlg('IPK',floattostrf(IPK,fffixed,3,2), mtInformation,[mbOK],0);
+
+     messageDlg('tampan',booltostr(tampan), mtInformation,[mbOK],0);
+
+     messageDlg('hari ini',formatdatetime('dd-mm-yyyy',now), mtInformation,[mbOK],0);
+end;
+
+procedure TForm1.eNAMAChange(Sender: TObject);
+begin
+
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
