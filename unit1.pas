@@ -16,6 +16,8 @@ type
     eNAMA: TEdit;
     Label1: TLabel;
     procedure button(Sender: TObject);
+    procedure eNAMAChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
 
   public
@@ -34,6 +36,16 @@ implementation
 procedure TForm1.button(Sender: TObject);
 begin
   showmessage('hello '+eNAMA.text);
+end;
+
+procedure TForm1.eNAMAChange(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+
 end;
 
 end.
